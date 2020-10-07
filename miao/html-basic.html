@@ -2,6 +2,13 @@
 <html>
   <head>
     <title>html练习</title>
+    <style>
+      p {
+        color:yellow;
+        
+      }
+    </style>
+    <link rel="stylesheet" href="">
   </head>
 
   <body>
@@ -21,10 +28,10 @@
     </p>
 
     <a href="https://www.jd.com/">在新窗口打开京东</a>
-    <a href="#">点击给我发邮件</a>
-    <a href="#">跳转到页面底部</a>
+    <a href="mailto:xxx@xxx.com">点击给我发邮件</a>
+    <a href="#dibu">跳转到页面底部</a>
     <a
-      href="https://drscdn.500px.org/photo/229389427/m%3D1170/v2?user_id=7012987&webp=true&sig=196fa0c161aa562478d08571764872f7d69a346c3c0b2e12aa00e2c6414eb28b" 
+      href="https://drscdn.500px.org/photo/229389427/m%3D1170/v2?user_id=7012987&webp=true&sig=196fa0c161aa562478d08571764872f7d69a346c3c0b2e12aa00e2c6414eb28b " 
     >
       点我可以下载一个文件
     </a>
@@ -97,8 +104,8 @@
     <hr>
 
     <h3><strong>Google搜索</strong></h3>
-    <form >
-      <input type="text"  placeholder="请输入想要搜索的内容">
+    <form target="_blank" action="http://www.google.com.hk/">
+      <input  type="text"  placeholder="请输入想要搜索的内容">
       <input type="submit"  value="在新窗口打开搜索结果">
     </form>
     <hr>
@@ -108,8 +115,8 @@
       <dt>性别</dt>
       <dd>
         <form>
-          <input type="radio">男
-          <input type="radio">女 
+          <label><input type="radio" name="gender" value="male">男</label> 
+          <label><input type="radio" name="gender" value="female">女</label> 
         </form>
       </dd>
       
@@ -119,16 +126,16 @@
           <select >
             <option hidden  value="">请选择</option>
             <optgroup label="少年" >
-              <option value="">1-6岁</option>
-              <option value="">6-12岁</option>
+              <option value="1-6">1-6岁</option>
+              <option value="6-12岁">6-12岁</option>
             </optgroup>
             <optgroup label="青年">
-              <option value="">13-15岁</option>
-              <option value="">16-18岁</option>
+              <option value="13-15">13-15岁</option>
+              <option value="16-18">16-18岁</option>
             </optgroup>
             <optgroup label="壮年">
-              <option value="">18-22岁</option>
-              <option value="">23-30岁</option>
+              <option value="18-22">18-22岁</option>
+              <option value="23-30">23-30岁</option>
             </optgroup>
           </select>
         </form>
@@ -165,21 +172,21 @@
       <dt>自我介绍</dt>
       <dd>
         <form action="">
-        <textarea name="" id="" cols="30" rows="10">&lt;/textarea&gt;</textarea>
+        <textarea name="" id="" cols="30" rows="10">&lt;/textarea></textarea>
         </form>
       </dd>
     </dl>
   
     <form action="">
-      <fieldset>
+      <fieldset disabled>
         <legend>这里面的全都禁用</legend>
-          <input type="text" disabled>
-          <input type="text" disabled>
-          <input type="text" disabled>
-          <input type="text" disabled>
+          <input type="text" >
+          <input type="text" >
+          <input type="text" >
+          <input type="text" >
       </fieldset>
       <button>提交</button> 
-      <input type="reset" name="" id="">
+      <button type="reset">重置</button>
     </form>
     <hr>
 
@@ -231,8 +238,8 @@
     </map>
     <hr>
 
-    <a href="#">点击我会在下面的frame里打开小米商场，但为什么打不开呢？</a><br>
-    <iframe width="300" src="https://nodejs.org/en/" frameborder="1"></iframe><br>
+    <a target="firame1" href="#">点击我会在下面的frame里打开小米商场，但为什么打不开呢？</a><br>
+    <iframe name="firame1" width="300" src="https://nodejs.org/en/" frameborder="1"></iframe><br>
     <span>
       怎样&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在这两个字之间空这么大呢？
     </span><br>
@@ -243,7 +250,7 @@
        &lt;span>&lt;/span>
     </span>
 
-
+    <div id="dibu"></div>
   
 
 

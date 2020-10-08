@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+          body > h4 {
+        background-color: red;
+      }
+      h4 > p {
+          width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 600px;
+          xborder: 2px solid;
+
+
+      }
+      body > div {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 600px;
+        xpadding: 5px;
+        border: 2px solid;
+
+      }
+      div > p {
+        height: 5em;
+        xline-height: 1;
+        overflow: scroll;
+        margin: 10px;
+      }
+      div > div {
+        border: 25px solid rgb(0,0,0,0);
+        background-color: violet;
+        margin: 10px;
+      }
+      div > div:hover {
+        margin-left: -0.5px;
+        margin-right: 0px;
+      }
+      body div + div {
+        width: 0px;
+        height: 0px;
+        padding: 0px;
+        xmargin-top: 30px;
+        xbackground-color: red;
+        border: 150px solid orange;
+        xborder-width: 10px 30px 30px 30px;
+        border-color: rgb(0,0,0,0) rgb(0,0,0,0) orange rgb(0,0,0,0);
+        border-width: 100px 100px 100px 100px;
+    </style>
+  </head>
+  <body>
+    <h4>
+      <p>aaaaa</p>
+    </h4>
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore provident, delectus
+        ullam doloribus iure earum explicabo, consequatur excepturi eum! Quis, modi, numquam. Ipsam,
+        earum. Velit non debitis doloribus, autem tempora!
+      </p>
+      <div></div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum voluptas sapiente, inventore
+        modi! Dolorem eligendi nihil iusto consequuntur ipsum quisquam voluptate rem! Porro quaerat
+        enim, tempore facere omnis accusamus quidem.
+      </p>
+    </div>
+    <div></div>
+  </body>
+</html>

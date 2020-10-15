@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .a {
+        width: 500px;
+        height: 400px;
+        border: 1px solid red;
+        margin-bottom: 20px;
+      }
+      .a p {
+        width: 250px;
+        height: 300px;
+        background-color: gray;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+      }
+      hr {
+        border: 2px solid black;
+      }
+      .b {
+        position: relative;
+        width: 500px;
+        height: 400px;
+        background-color: red;
+      }
+      .b p {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      .c {
+        height: 300px;
+        border: 3px solid violet;
+        line-height: 300px;
+        font-size: 0px;
+        text-align: center;
+      }
+      .c span {
+        font-size: 18px;
+        xwidth: 400px;
+        line-height: normal;
+        xmargin: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        border: 1px solid black;
+      }
+      table {
+        border: 3px solid violet;
+        width: 500px;
+      }
+
+      td {
+        height: 300px;
+        border: 1px solid;
+        vertical-align: middle;
+        xmargin: 20px;
+      }
+      .d {
+        border: 3px solid blue;
+        width: 400px;
+        xheight: 300px;
+        xmargin: auto;
+        xtext-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>内外定宽高取绝对居中</h2>
+    <div class="a">
+      <p></p>
+    </div>
+    <br />
+    <hr />
+    <h2>定位布局取绝对居中</h2>
+    <div class="b">
+      <p></p>
+    </div>
+    <br />
+    <hr />
+    <h2>行内布局取绝对居中</h2>
+    <div class="c">
+      x
+      <span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus similique veritatis
+        sapiente.
+      </span>
+    </div>
+    <br />
+    <hr />
+    <h2>表格多行文本垂直居中</h2>
+    <table>
+      <td>
+        <div class="d">
+          Lorem ipsum, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, sed?
+        </div>
+      </td>
+    </table>
+  </body>
+</html>

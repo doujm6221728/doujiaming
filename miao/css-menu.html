@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .menu {
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+        background-color: #3c3c3c;
+        color: #cccccc;
+      }
+      li {
+        display: inline-block;
+        padding: 5px 10px;
+        position: relative;
+        white-space: nowrap;
+      }
+      .menu li li {
+        display: block;
+      }
+      .menu ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #252526;
+        xpadding: 5px 10px;
+        padding-left: 0px;
+      }
+      .menu ul ul {
+        position: absolute;
+        top: 0;
+        left: 100%;
+      }
+      .menu li:hover > ul {
+        display: block;
+      }
+      li:hover {
+        background-color: #094771;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="menu">
+      <li>
+        文件(F)
+        <ul>
+          <li>新建文件</li>
+          <li>新建窗口</li>
+          <li>
+            打开最近的文件
+            <ul>
+              <li>重新打开</li>
+              <li>清除最近打开记录</li>
+              <li>更多...</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        编辑(E)
+        <ul>
+          <li>剪切</li>
+          <li>复制</li>
+          <li>粘贴</li>
+        </ul>
+      </li>
+      <li>
+        选择(S)
+        <ul>
+          <li>全选</li>
+          <li>展开选定内容</li>
+          <li>缩小选定范围</li>
+        </ul>
+      </li>
+      <li>
+        查看(V)
+        <ul>
+          <li>命令面板...</li>
+          <li>打开视图...</li>
+          <li>
+            外观
+            <ul>
+              <li>全屏</li>
+              <li>禅模式</li>
+              <li>居中布局</li>
+            </ul>
+          </li>
+          <li>
+            编辑器布局
+            <ul>
+              <li>向上拆分</li>
+              <li>向下拆分</li>
+              <li>向左拆分</li>
+              <li>向右拆分</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

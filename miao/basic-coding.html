@@ -37,7 +37,7 @@
     <script type="a6" id="ch0103/06">
       var a = Number(prompt())
       var b = Number(prompt())
-      console.log (((a / b) * 100).toFixed(3) + '%' )
+      console.log ((b / a * 100).toFixed(3) + '%')
     </script>
     <script type="a7" id="ch0103/07">
       var x = Number(prompt())
@@ -80,9 +80,9 @@
       var h = Number(prompt())
       var r = Number(prompt())
       var pi = 3.14159
-      var v = h * 2 * pi * r * r
+      var v = h * pi * r * r
       var n = 20 * 1000 / v
-      console.log( Math.ceil(n))
+      console.log( Math.ceil(n) )
     </script>
     <script type="a15" id="ch0103/15">
       var n = Number(prompt())
@@ -95,10 +95,11 @@
       var y1 = Number(prompt())
       var x2 = Number(prompt())
       var y2 = Number(prompt())
-      var r = (x1 - x2) ** 2 
+      
       var dx = x1 -x2
       var dy = y1 -y2
-      console.log(Math.sqrt(dx * dx + dy * dy))
+      var r = Math.sqrt(dx * dx + dy * dy)
+      console.log(r)
     </script>
     <script type="a17" id="ch0103/17">
       var x1 = Number(prompt())
@@ -113,7 +114,7 @@
       var d3 = Math.sqrt((x3 - x1) * (x3 - x1) + (y3 - y1) * (y3 - y1))
 
       var a = (d1 + d2 + d3) / 2
-      var b = Math.sqrt( a * (a - d1) *(a - d2) * (a - d3) )
+      var b = Math.sqrt( a * (a - d1) * (a - d2) * (a - d3) )
       console.log(b)
     </script>
     <script type="a18" id="ch0103/18">
@@ -154,9 +155,9 @@
     <script type="b3" id="ch0104/03">
       var a = Number(prompt())
       if ( a % 2 == 0) {
-        console.log('odd')
-      } else if ( a % 2 != 0) {
         console.log('even')
+      } else {
+        console.log('odd')
       }
     </script>
     <script type="b4" id="ch0104/04">
@@ -170,11 +171,11 @@
     <script type="b5" id="ch0104/05">
       var x = Number(prompt())
       var y = Number(prompt())
-      if ((0 <= x < (Math.pow(2.32))) > ((Math.pow(-2,31)) <= y < (Math.pow(2,31)))) {
+      if (x > y) {
         console.log('>')
-      } else if ((0 <= x < (Math.pow(2.32))) == ((Math.pow(-2,31)) <= y < (Math.pow(2,31)))) {
+      } else if ((x == y) {
         console.log('=')
-      } else if ((0 <= x < (Math.pow(2.32))) < ((Math.pow(-2,31)) <= y < (Math.pow(2,31)))) {
+      } else {
         console.log('<')
       }
       
@@ -190,9 +191,9 @@
     <script type="b7" id="ch0104/07">
       var a = Number(prompt())
       var b = Number(prompt())
-      if ( a == 10 || b == 20) {
+      if ( a >= 10 || b >= 20) {
         console.log(1)
-      } else if ( a != 0 || b != 20) {
+      } else {
         console.log(0)
       }
     </script>
@@ -229,15 +230,12 @@
     <script type="b10" id="ch0104/10">
       var a = Number(prompt())
       var b = Number(prompt())
-      if (((0 <= a <= 100) > 60) && ((0 <= b <= 100) < 60)) {
+      if (a >= 60 && b < 60 || a < 60 && b >= 60) {
         console.log(1)
-      } else if (((0 <= a <= 100) < 60) && ((0 <= b <= 100) > 60)) {
-        console.log(1)
-      } else if (((0 <= a <= 100) < 60) && ((0 <= b <= 100) < 60)) {
-        console.log(0)
-      } else if (((0 <= a <= 100) > 60) && ((0 <= b <= 100) > 60)) {
+      } else {
         console.log(0)
       }
+        
     </script>
     <script type="b11" id="ch0104/11">
       var a = Number(prompt())
@@ -249,12 +247,14 @@
     </script>
     <script type="b12" id="ch0104/12">
       var a = Number(prompt())
-      if (a / (3 + 27 + 23) > a / 1.2) {
-        console.log('Bike')
-      } else if (a / (3 + 27 + 23) < a / 1.2) {
-        console.log('Walk')
-      } else if (a / (3 + 27 + 23) == a / 1.2) {
-        console.log('All')
+      var ti = a / 1.2
+      var t2 = a / 3 + 27 + 23
+      if (t1 < t2) {
+        console.log('walk')
+      } else if (ti == t2) {
+        console.log('all')
+      } else {
+        cconsole.log('bike')
       }
     </script>
     <script type="b13" id="ch0104/13">
@@ -301,10 +301,10 @@
       var a = Number(prompt())
       var b = Number(prompt())
       var c = Number(prompt())
-      if (a + b > c && a < b + c && b < a + c) {
-        console.log('YES')
+      if (a + b > c && b + c > a && a + c > b) {
+        console.log('yes')
       } else {
-        console.log('NO')
+        console.log('no')
       }
     </script>
     <script type="b17" id="ch0104/17">
@@ -319,12 +319,12 @@
       var x = Number(prompt())
       var y = Number(prompt())
       if ( x >= -1 && x <= 1 && y >= -1 && y <= 1) {
-        console.log('YES')
+        console.log('yes')
       } else {
-        console.log('NO')
+        console.log('no')
       }
     </script>
-    <script type="" id="ch0104/19">
+    <script type="b19" id="ch0104/19">
       var a = Number(prompt())
       var b = Number(prompt())
       var c = prompt()
@@ -342,12 +342,44 @@
       }
       
     </script>
-    <script type="" id="ch0104/20"></script>
-    <script type="b21" id="ch0104/21">
-       var n = Number(prompt())
-       var x = Number(prompt())
-       var y = Number(prompt())
-       console.log( n - Math.ceil(y / x))
+    <script type="b20" id="ch0104/20">
+      var a = Number(prompt())
+      var b = Number(prompt())
+      var c = Number(prompt())
+      var delta = b * b - 4 * a * c
+    
+      if (delta == 0) {
+        var x = -b / (2 * a)
+        console.log('x1=x2=' + x)
+      } else if (delta > 0) {
+        var sqrt_delta = Math.sqrt(delta)
+        var x1 = (-b + sqrt_delta) / ( 2 * a)
+        var x2 = (-b - sqrt_delta) / ( 2 * a)
+        console.log('x1=' + x1 + ';x2=' + x2)
+      } else {
+        var x1r = - b / (2 * a)//x1的实部
+        var x1i = Math.sqrt(-delta) / (2 * a)//x1的虚部
+        var x2r = - b / (2 * a)
+        var x2i = -Math.sqrt(-delta) / (2 * a)
+    
+        if (x1i < 0) {
+          var x1 = '' + x1r + x1i + 'i'
+        } else {
+          var x1 = x1r + '+' + x1i + 'i'
+        }
+        if (x2i < 0) {
+          var x2 = '' + x2r + x2i + 'i'
+        } else {
+          var x2 = x2r + '+' + x2i + 'i'
+        }
+        console.log('x1=' + x1 + ';x2=' + x2)
+      }
+        </script>
+        <script type="b21" id="ch0104/21">
+           var n = Number(prompt())
+           var x = Number(prompt())
+           var y = Number(prompt())
+           console.log( n - Math.ceil(y / x))
     </script>
   </head>
   <body></body>

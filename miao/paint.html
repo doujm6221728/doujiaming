@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="400" height="300"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated'
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    x = x | 0
+    y = y | 0
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+
+  function line(x1, y1, x2, y2) {
+    ctx.strokeStyle = 'black'
+    ctx.moveTo(x1, y1)
+    ctx.lineTo(x2, y2)
+    ctx.stroke()
+  }
+  /**
+   * YOUR TASK
+画图的题：
+画一条实线
+画一条一个实点一个空点的虚线
+画一条两个实点两个空点的虚线
+画一条三个实点两个空点的虚线
+画一条45度的斜线
+画一条30度的斜线（选做）
+在四个角画分别画一条45度的斜线以让画面看起来像一个相框
+画一条跨越画布左上角和右下角的对角线
+画一个空心矩形
+画一个实心矩形
+画一个rgb色彩空间的某一面
+画一个空心的圆
+画一个实心的圆
+画一个大小合适的sin(x)的图像
+   */
+</script>
+<script>
+  // YOUR CODE GOES BELOW
+
+  for (var x = 0; x <= 400; x++) {
+    dot(x,10)
+  }
+  for (var x = 0; x <= 400; x++) {
+    dot(x,290)
+  }
+  for (var y = 0; y <= 300; y += 2) {
+    dot(10,y)
+  }
+  for (var y = 0; y <= 300; y += 2) {
+    dot(390,y)
+  }
+  for (var x =10; x <= 390; x += 4) {
+    dot(x,30,'blueviolet')
+  }
+  for (var x =11; x <=390; x += 4) {
+    dot(x,30,'blueviolet')
+  }
+  for (var x = 0; x < 400; x++) {
+    dot(x,x,'cornflowerblue') //45°
+    dot(x + 1,x,'cornflowerblue')
+    dot(x + 2,x,'cornflowerblue')
+    dot(x,x * 0.577, 'fuchsia') //30°
+    dot(x,x + x)
+    dot(x,x + x + 1)
+    dot(x,x + x + 2)
+  }
+  for (var x = 0; x < 400; x++) {
+    dot(50 - x,x,'red') //45°
+    dot(650 - x,x,'red')
+    dot(x,x - 350,'red')
+    dot(x,x + 250,'red')
+  }
+  for (var x = 50; x < 100; x++) {
+    dot(x,50)
+    dot(x,100)
+  }
+  for(var y = 50; y < 100; y++) {
+    dot(50,y)
+    dot(100,y)
+  }
+  for (var x = 50; x < 100; x++) {
+    for (var y = 200; y < 250; y++) {
+      dot(x,y)
+    }
+  }
+ for (var x = 0; x < 400; x++) {
+   dot(x,x * 0.750 )
+ }
+
+
+
+
+
+
+  console.log(dot)
+  
+
+</script>
+</html>

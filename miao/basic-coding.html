@@ -553,7 +553,7 @@
       }
       console.log(result)
     </script>
-    <script type="" id="ch0105/14">
+    <script type="c14" id="ch0105/14">
       var x = Number(prompt())
       var n = Number(prompt())
       for (var i = 0; i < n; i++) {
@@ -561,32 +561,422 @@
       }
       console.log(x.toFixed(4))
     </script>
-    <script type="" id="ch0105/15"></script>
-    <script type="" id="ch0105/16"></script>
-    <script type="" id="ch0105/17"></script>
-    <script type="" id="ch0105/18"></script>
-    <script type="" id="ch0105/19"></script>
-    <script type="" id="ch0105/20"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
-    <script type="" id="ch0105/01"></script>
+    <script type="c15" id="ch0105/15">
+      var R = Number(prompt())
+      var M = Number(prompt())
+      var Y = Number(prompt())
+      
+      for (var i = 0; i < Y; i++) {
+        M = M * (1 + R / 100)
+      }
+      console.log(parseInt(M))
+    </script>
+    <script type="c16" id="ch0105/16">
+      var N = Number(prompt())
+      var K = Number(prompt())
+      
+      var f = 200
+      var sum = 0
+      var a = false
+      for (var i = 1; i <= 20; i++) {
+        sum = sum + N 
+        if (sum >= f) {
+          console.log(i)
+          a = true
+          break
+        }
+        f = f * (1 + K / 100)
+      }
+        if (!a) {
+          console.log('Impossible')
+        }
+    </script>
+    <script type="c17" id="ch0105/17">
+      var K = Number(prompt())
+       
+      var x1 = 1
+      var x2 = 1 
+      for (var i = 1; i < K; i++) {
+        var next = x1 + x2 
+        x1 = x2 
+        x2 = next
+      }
+      console.log(next)
+    </script>
+    <script type="c18" id="ch0105/18">
+      var n = Number(prompt('整数'))
+      var z = Number(prompt('鸡尾酒总病例')) //鸡尾酒疗法的总病例
+      var g = Number(prompt('鸡尾酒有效病例')) //鸡尾酒疗法的有效病例
+      var x = (g / z) * 100 //鸡尾酒疗法的有效率(百分比)
+
+      for (var i = 0; i < n - 1; i++) {
+        var a = Number(prompt('其他疗法总病例')) //其他疗法的总病例
+        var b = Number(prompt('其他疗法有效病例')) //其他疗法的有效病例
+        var y = (b / a) * 100 //其他疗法的有效率（百分比）
+        if (y - x > 5) {
+          console.log('better')
+        } else  if (x - y > 5) {
+          console.log('worse')
+        } else {
+          console.log('same')
+        }
+      }
+    </script>
+    <script type="c19" id="ch0105/19">
+      var n = Number(prompt('屋顶数'))
+      
+      for (var i = 0; i < n; i++) {
+        var x = Number(prompt('x坐标'))
+        var y = Number(prompt('y坐标'))
+        var r = Number(prompt('人数'))
+        var j = Math.sqrt(x * x + y * y) * 2//大本营来回屋顶的距离
+        var t = j / 50 + r * 1.5 //救援时间
+      }
+      console.log(Math.ceil(t))
+    </script>
+    <script type="c20" id="ch0105/20">
+      var n = Number(prompt('高度'))
+      var h = 20
+      var sum = n
+      for(var i = 1; i < 10; i++) {
+        n = n / 2 //第i次落地之前的高度
+        sum = sum + n * 2 //落地之后的累加
+        h = h / 2 
+        
+        
+      }
+      console.log((sum).toFixed(4),(h / 2).toFixed(7))
+    </script>
+    <script type="c21" id="ch0105/21">
+      var n = Number(prompt('整数'))
+
+      while (true) {
+        if (n == 1) {
+          console.log('End')
+          break
+        }
+        if (n % 2 == 1) {
+          var t = n * 3 + 1
+          console.log(n + '*3+1=' + t)
+          n = t
+        }
+         if (n % 2 == 0) {
+          var t = n / 2
+          console.log(n + '/2=' + t)
+          n = t
+        }
+         
+
+      }
+    </script>
+    <script type="c22" id="ch0105/22">
+
+      var stock = 0 
+      var money = 0 
+      var flag = false
+      for (var i = 1;  i <= 12; i++) {
+        money = money  + 300 //每月300
+        var y = Number(prompt('预计花销')) //预计月花销
+        if (money < y) {
+          console.log(-i)
+          flag = true
+          break
+        }
+        money = money - y //手上剩余的钱
+        if (money >= 100) {
+          var left = money % 100 //保留的零头
+          var stock = money - left  //存进去的整百
+          money = left
+        }
+        
+      }
+      if (!flag) {
+      console.log(money + stock * 0.2)
+      }
+    </script>
+    <script type="s23" id="ch0105/23">
+      var m = Number(prompt('药品总量'))
+      var n = Number(prompt('取药人数'))
+ 
+      var s = 0 //不能取上药的人
+      for (var i = 0; i < n; i++) {
+      var p = Number(prompt('取药数量'))
+      var M = m - p 
+      m = M 
+      if (m > p) {
+        s++
+      } 
+      }
+      console.log(s)
+      
+      
+    </script>
+    <script type="c24" id="ch0105/24">
+      var n = Number(prompt('整数 '))
+      
+      var t = 0
+      for (var i = 0; i < n; i++) {
+        var s = Number(prompt('收缩'))
+        var z = Number(prompt('舒张'))
+        if (s >= 90 && s <=140 && z >= 60 && z <= 90) {
+          t++
+        } else {
+          t = 0
+        }
+      }
+      console.log(t)
+    </script>
+    <script type="c25" id="ch0105/25">
+      for (var i = 1; i <= 999; i++) {
+        var a7 = i % 7  //7位数的个位数
+        var b7 = (i - a7) / 7 % 7  //7位数的十位数
+        var c7 = (i - a7 - b7 * 7) / 7 / 7 % 7  //7位数的百位数
+
+        var a9 = i % 9  //9位数的个位数
+        var b9 = (i - a9) / 9 % 9  //9位数的十位数
+        var c9 = (i - a9 - b9 * 9) / 9 / 9 % 9  //9位数的百位数
+
+      if (a7 == c9 && b7 == b9 && c7 == a9) {
+        console.log(i,'' + c7 + b7 + a7,'' + c9 + b9 + a9)
+        break
+      }
+      }
+    </script>
+    <script type="c26" id="ch0105/26">
+      var n = Number(prompt('个数'))
+      var sum = 0
+
+      for (var i = 0; i < n; i++) {
+        var s = Number(prompt())
+        var s1 = s % 10
+        var s2 = (s - s1) /10 %10
+        var s3 = (s - s1 - s2 * 10) / 10 / 10 % 10
+        var s4 = (s - s1 - s2 * 10 - s3 * 100) / 10 / 10 / 10 % 10
+
+        if (s1 - s4 - s3 - s2 > 0) {
+          sum++
+        }
+      }
+      console.log(sum)
+    </script>
+    <script type="c27" id="ch0105/27">
+      var k = Number(prompt('整数'))
+      var s = 0
+      for (var i = 1; ; i++) {
+        s = s + 1 / i 
+        if (s > k) {
+           console.log(i)
+           break
+        }
+      }
+    </script>
+    <script type="c28" id="ch0105/28">
+     var n = Number(prompt('三位整数'))
+
+      for (var i = 0; i < n; i++) {
+        var s1 = n % 10
+        var s2 = (n - s1) /10 %10
+        var s3 = (n - s1 - s2 * 10) / 10 / 10 % 10
+
+      }
+      console.log(s1,s2,s3)
+    </script>
+    <script type="c29" id="ch0105/29">
+      var n = Number(prompt('三位整数'))
+      var flag = false
+        if (n < 0) {
+          n = -n
+          flag = true   
+      }
+
+      var a = 0
+
+      do {
+        var s = n % 10
+        a = a * 10 + s
+        n = (n - s) / 10
+      } while (n > 0)
+
+      if (flag) {
+        console.log(-a)
+      }  else {
+          console.log(a)
+      }
+    </script>
+    
+    <script type="c30" id="ch0105/30">
+      var m = Number(prompt('整数'))
+      var k = Number(prompt('个数'))
+
+      var sum = 0
+      var a = m
+      while (a > 0) {
+      var s = a % 10
+      if (s == k) {
+        sum++
+      }
+      a = (a - s) / 10
+      }
+      if (m % 19 == 0 && sum == k) {
+        console.log('YES')
+      } else {
+        console.log('NO')
+      }
+    </script>
+    <script type="c31" id="ch0105/31">
+      var n = Number(prompt(''))
+      var m = Number(prompt(''))
+
+      for (var i = 1;  i <= n; i++) {//i为灯的编号
+        var light = true //灯是开着的
+        for  (var p = 1; p <= m; p++) {//p为人的编号
+          if (i % p == 0) {//如果灯编号是人编号的倍数，说明这个人要切换这个灯
+            light = !light
+          }
+        }
+        if (light == false) {
+          console.log(i)
+        }
+      }
+    </script>
+    <script type="c32" id="ch0105/32">
+      var n = Number(prompt('整数'))
+      
+      var p = 1
+      var q = 2
+      var s = 0
+      var sum = 0
+      for (var i = 1; i <= n; i++) {
+        sum = sum + q / p
+        s = p
+        p = q
+        q = q + s
+      }
+      console.log(sum)
+    </script>
+    <script type="c33" id="ch0105/33">
+      var n = Number(prompt('整数'))
+
+      var sum = 0
+      for (var i = 1; i <= n; i++) {
+        if (i % 2 != 0) {
+          sum = sum  + 1 / i
+        } else {
+          sum = sum - 1 / i
+        }
+      }
+      console.log((sum).toFixed(4))
+    </script>
+    <script type="c34" id="ch0105/34">
+      var n = Number(prompt('整数'))
+      
+      var f = 1
+      var sum = 0
+      for (var i = 1; i <= n; i++) {
+        f = f * i 
+        sum = sum + f
+      }
+      console.log(sum)
+    </script>
+    <script type="c35" id="ch0105/35">
+      var n = Number(prompt('整数'))
+  
+      var f = 1
+      var sum = 1
+      for (var i = 1; i <= n; i++) {
+        f = f / i 
+        sum = sum + f
+      }
+      console.log((sum).toFixed(10))
+    </script>
+    <script type="c36" id="ch0105/36">
+      var x = Number(prompt(''))
+      var n = Number(prompt(''))
+      
+      var sum = 0
+      for (var i = 0; i <= n; i++) {
+        var a = Math.pow(x,i)
+       sum = sum + a
+      }
+      console.log((sum).toFixed(2))
+    </script>
+    <script type="" id="ch0105/37">
+      
+    </script>
+    <script type="" id="ch0105/38">
+     
+    </script>
+    <script type="c39" id="ch0105/39">
+      var n = Number(prompt(''))
+
+      var sum = 0
+      for (var i = 0; i <= n; i++) {
+        var a = i % 7
+        var b = i % 10
+        var c = i / 10
+        if (a != 0 && b != 7 && b != 7) {
+          sum = sum + i * i
+        }
+      }
+        console.log(sum)
+    </script>
+    <script type="c40" id="ch0105/40">
+      var n = Number(prompt())
+      var sum = 0
+      for(i = 1; i <= n; i++) {
+        var s=i
+        while (s > 0) {
+          var digit = s % 10
+         if (digit == 1) {
+           sum++
+         }
+         s = (s - / 10
+        }
+      }
+      console.log(sum)
+    </script>
+    <script type="" id="ch0105/41">
+      var t = Number(prompt())
+      var n = Number(prompt())
+      var sum = 0
+      var s = i
+      for(i = t; i <= n; i++) {
+        while (s > 0) {
+          var digit = s % 10
+         if (digit == 2) {
+           sum++
+         }
+         s = (s - / 10
+        }
+      }
+      console.log(sum)
+    </script>
+    <script type="" id="ch0105/41">
+      var fb = function (n) {
+
+        for (var i = 1; i < n; i++) {
+          if (i % 3 == 0 && i % 5 == 0) {
+            console.log('FizzBuzz')
+          }
+          if (i % 3 == 0) {
+            console.log('Fizz')
+          } else if (i % 5 == 0 && i % 3 != 0) {
+            console.log('Buzz')
+          } else {
+            console.log(i)
+          }
+        }
+        
+      }
+    </script>
+    <script type="" id="ch0105/41"></script>
   </head>
-  <body></body>
+  <body>
+
+    <!-- 题目网站 -->
+    <!-- http://noi.openjudge.cn/ -->
+  </body>
 </html>
+
+
+}

@@ -39,17 +39,6 @@ var doujm6221728 = {
   }
 
   ,
-  concat: function (array, values) {
-    var result = array.slice()
-    for (var i = 0; i < values.length; i++) {
-      if (values[i]) {
-        result.push(values[i])
-      }
-    }
-    return result
-  }
-
-  ,
   drop: function (array, n = 1) {
     var result = []
     for (var i = n; i < array.length; i++) {
@@ -61,7 +50,7 @@ var doujm6221728 = {
   ,
   dropRight: function (array, n = 1) {
     var result = []
-    for (var i = 0; i < array.length - n; i--) {
+    for (var i = 0; i < array.length - n; i++) {
       result.push(array[i])
     }
     return result
@@ -112,7 +101,8 @@ var doujm6221728 = {
   
   ,
   max: function (array) {
-    var max = -Infinity
+    if (array.length == 0) return undefined
+    var max = array[0]
     for (var i = 0; i < array.length; i++) {
       max = Math.max(max, array[i])
     }
@@ -121,7 +111,8 @@ var doujm6221728 = {
 
   ,
   min: function (array) {
-    var min = Infinity
+    if (array.length == 0) return undefined
+    var min = array[0]
     for (var i = 0; i < array.length; i++) {
       min = Math.min(min, array[i])
     }

@@ -23,7 +23,7 @@ var doujm6221728 = {
   }
 
   ,
-  join: function (array, separator=',') {
+  join: function (array, separator = ',') {
     var result = ''
     for (var i = 0; i < array.length - 1; i++) {
       result = result + array[i] + separator
@@ -137,7 +137,13 @@ var doujm6221728 = {
     return sums
   }
 
-
+  ,
+  fill: function (array, value, start = 0, end = array.length) {
+    for (var i = start; i < end; i++) {
+      array[i] = value
+    }
+    return array
+  }
 
 
 

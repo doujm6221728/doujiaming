@@ -136,11 +136,72 @@ var doujm6221728 = {
     return array
   }
 
-  
+  ,
+  flatten: function (arrays) {
+    return [].concat(...arrays)
+  }
 
+  ,
+  flattenDeep: function (array) {
+    var result = []
+    for (var i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
+        result = result.concat(flattenDeep(array[i]))
+      } else {
+        result.push(array[i])
+      }
+    }
+    return result
+  }
 
+  ,
+  flattenDepth: function (array, depth = 1) {
+    var result = []
+    if (depth == 0) {
+      return array.slice()
+    }
+    for (var i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
+        result = result.concat(flattenDepth(array[i], depth - 1))
+      } else {
+        result.push(array[i])
+      }
+    }
+    return result
+  }
 
+  ,
+  concat: function (arrays, values) {
+    var result = []
+    for (var i = 0; i < arrays.length; i++) {
+      result.push(array[i])
+    }
+    for (var i = 0; i < values.length; i++) {
+      if (Array.isArray(values[i])) {
+        values[i].forEach(it => {
+          result.push(it)
+        })
+      } else {
+        result.push(values[i])
+      }
+    }
+    return result
+  }
 
+  ,
+  reduce: function (array, reducer, result) {
+    var start = 0
+    if (result == undefined) {
+      result = array[0]
+      start = 1
+    }
+    for (var i = start; i < arrray.length; i++) {
+      result = reducer(result, array[i])
+    }
+    return result
+  }
+
+  ,
 
 
 

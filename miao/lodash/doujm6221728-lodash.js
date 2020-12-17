@@ -146,7 +146,7 @@ var doujm6221728 = {
     var result = []
     for (var i = 0; i < array.length; i++) {
       if (Array.isArray(array[i])) {
-        result = result.concat(flattenDeep(array[i]))
+        result.push(...flattenDeep(array[i]))
       } else {
         result.push(array[i])
       }
@@ -162,7 +162,7 @@ var doujm6221728 = {
     }
     for (var i = 0; i < array.length; i++) {
       if (Array.isArray(array[i])) {
-        result = result.concat(flattenDepth(array[i], depth - 1))
+        result.push(...flattenDepth(array[i], depth - 1))
       } else {
         result.push(array[i])
       }

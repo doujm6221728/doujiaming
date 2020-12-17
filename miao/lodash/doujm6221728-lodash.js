@@ -202,13 +202,54 @@ var doujm6221728 = {
   }
 
   ,
+  //predicate: 谓词，lodash中用作判断的
+  groupBy: function (array, predicate = it => it) {
+    var result = {}
+    for (var i = 0; i < array.length; i++) {
+      var key = predocate(array[i], i, array)
+      if (!Array.isArray(result[key])) {
+        result[key] = []
+      } 
+      result[key].push(array[i])
+    }
+    return result
+  }
 
+  ,
+  //返回首个提供的参数
+  identity: function (val) {
+    return val
+  }
+  //也就是 const identity = it => it
 
+  ,
+  sumBy: function (array, predicate = it => it) {
+    var sum = 0
+    for (var i = 0; i < array.length; i++) {
+      sum += predicate(array[i], i, array)
+    }
+    return sum
+  }
 
+  ,
+  //返回映射后的新对象
+  mapValues: function (object, mapper) {
+    var result = {}
+    for (var key in object) {
+      result[key] = mapper(object[key], key, object) //对象没有下标 就返回key
+    }
+    return result
+  }
 
-
-
-
+  ,
+  //反向版 mapValues
+  mapKeys: function (object, mapper){
+    var result = {}
+    for (var key in object) {
+      result[mapper(object[key], key, object)] = object[key] //对象没有下标 就返回key
+    }
+    return result
+  }
 
 
 

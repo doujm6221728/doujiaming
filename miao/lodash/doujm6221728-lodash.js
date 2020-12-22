@@ -211,9 +211,9 @@ var doujm6221728 = function () {
 
  
   function flattenDepth(array, depth = 1) {
-    var result = []
+    var result = array
     while (depth) {
-      result = flatten(array)
+      result = flatten(result)
       depth--
     }
     return result
@@ -310,6 +310,17 @@ var doujm6221728 = function () {
     return -1
   }
 
+
+  function lastIndexOf(array, value, fromIndex = array.length - 1) {
+    for (var i = fromIndex; i >= 0; i--) {
+      if (array[i] === value) {
+        return i
+      }
+    }
+    return -1
+  }
+
+
   function difference(array, ...values) {
     var obj = {}
     var result = []
@@ -330,11 +341,37 @@ var doujm6221728 = function () {
   }
   
 
+  function nth(array, n = 0) {
+    if (n < 0) {
+      return array[array.length + n]
+    }
+    return array[n]
+  }
   
 
+  function fromPairs(pairs) {
+    var map = {}
+    for (var i = 0; i < pairs.length; i++) {
+      map[pairs[i][0]] = pairs[i][1]
+    }
+    return map
+  }
 
 
-
+  function pull(array, ...values) {
+    var result = []
+    var ary = []
+    
+    for (var i of values) {
+      ary.push(i)
+    }
+    for (var i = 0; i < array.length; i++) {
+      if (!(ary.includes(array[i]))) {
+        result.push(array[i])
+      }
+    }
+    return result
+  }
 
 
 
@@ -367,7 +404,11 @@ var doujm6221728 = function () {
     mapValues,
     mapKeys,
     indexOf,
+    lastIndexOf,
     difference,
-
+    nth,
+    fromPairs,
+    pull,
+    
   }
 }()

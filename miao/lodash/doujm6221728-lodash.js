@@ -374,6 +374,128 @@ var doujm6221728 = function () {
   }
 
 
+  function pullAll(array, values) {
+    var result = array
+
+    for (var i = 0; i < values.length; i++) {
+      for (var j = 0; j < array.length; j++) {
+        if (array[j] === values[i]) {
+          result.splice(j, 1)
+        }
+      }
+    }
+    return result
+  }
+
+
+
+  function ary(func, n = func.length) {
+    return function (...args) {
+      return func.slice(0, n)
+    }
+  }
+
+
+  function before(n, func) {
+    var c = 0
+    var result
+    return function (...args) {
+      if (c < n) {
+        func.call(this, ...args)
+        c++
+      } else {
+        return result
+      }
+    }
+  }
+
+
+  function after(n, func) {
+    var c = 0
+    return function () {
+      c++
+      if (c > n) {
+        return func,call(this, ...args)
+      }
+    }
+  }
+
+
+  function flip(func) {
+    return function (...args) {
+      func(...args.reverse())
+    }
+  }
+
+
+  function negate(predicate) {
+    return function (...args) {
+      return !predicate(...args)
+    }
+  }
+
+
+  function tail(array) {
+    var result = []
+    for (var i = 1; i < array.length; i++) {
+      result.push(array[i])
+    }
+    return result
+  }
+  
+
+  function take(array, n = 1) {
+    return array.slice(0,n)
+  }
+  
+
+  function takeRight(array, n = 1) {
+    var result = []
+    if (array.length < n) {
+      return array
+    }
+    for (var i = array.length - n; i < array.length; i++) {
+      result.push(array[i])
+    }
+    return result
+  }
+
+
+  function without(array, ...values) {
+    var result = []
+    var ary = []
+    
+    for (var i of values) {
+      ary.push(i)
+    }
+    for (var i = 0; i < array.length; i++) {
+      if (!(ary.includes(array[i]))) {
+        result.push(array[i])
+      }
+    }
+    return result
+  }
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -409,6 +531,16 @@ var doujm6221728 = function () {
     nth,
     fromPairs,
     pull,
-    
+    ary,
+    before,
+    after,
+    flip,
+    negate,
+    pullAll,
+    tail,
+    take,
+    takeRight,
+    without,
+
   }
 }()

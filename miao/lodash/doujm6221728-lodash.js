@@ -244,8 +244,8 @@ var doujm6221728 = function () {
       result = array[0]
       start = 1
     }
-    for (var i = start; i < arrray.length; i++) {
-      result = reducer(result, array[i])
+    for (var i = start; i < array.length; i++) {
+      result = reducer(array[i], result)
     }
     return result
   }

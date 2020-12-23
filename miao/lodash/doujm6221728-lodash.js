@@ -255,9 +255,9 @@ var doujm6221728 = function () {
   function groupBy(array, predicate = it => it) {
     var result = {}
     for (var i = 0; i < array.length; i++) {
-      var key = predocate(array[i], i, array)
+      var key = predicate(array[i], i, array)
       if (!Array.isArray(result[key])) {
-        result[key] = []
+        result[key] = array[i]
       } 
       result[key].push(array[i])
     }
@@ -477,16 +477,54 @@ var doujm6221728 = function () {
   }
 
 
-   
+  function zip(...arrays) {
+    var result = []
+    
+    for (var i = 0; i < arrays[0].length; i++) {
+      var tmp = []
+
+      for (var j = 0; j < arrays.length; j++) {
+        tmp.push(arrays[j][i])
+      }
+      result.push(tmp)
+    }
+    return result
+  }
 
 
+  function zipObject(props, values) {
+    var map = {}
+    for (var i = 0; i < props.length; i++) {
+      map[props[i]] = values[i]
+    }
+    return map
+  }
 
 
+  function flatMap(collection, iteratee) {
+    var result = []
+    for (var i = 0; i < collection.length; i++) {
+      result.push(...iteratee(collection[i], i, collection))
+    }
+    return result
+  }
 
 
+  function forEach(collection, iteratee) {
+    if (Array.isArray(collection)) {
+      for (var i = 0; i < collection.length; i++) {
+        iteratee(collection[i], i, collection)
+      }
+    }
 
-
-
+    if (typeof collection == 'Object') {
+      for (var j in collection) {
+        iteratee(collection[j], j, collection)
+      }
+    }
+    
+    return collection
+  }
 
 
 
@@ -541,5 +579,10 @@ var doujm6221728 = function () {
     take,
     takeRight,
     without,
+    zip,
+    zipObject,
+    flatMap,
+    forEach,
+
   }
 }()
